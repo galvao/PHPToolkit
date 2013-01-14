@@ -1,4 +1,4 @@
-PHP-Toolkit
+PHPToolkit
 ===========
 
-Generic "homemade" classes, functions, etc...
+Generic "homemade" classes, traits, functions, etc...
