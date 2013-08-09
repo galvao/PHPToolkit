@@ -5,7 +5,11 @@ namespace PHPToolkit;
  * Generates a random string composed of numbers and/or (uppercase and/or lowercase)
  * letters and/or symbols based on ASCII codes.
  *
+ * @package PHPToolkit
+ * @link https://github.com/galvao/PHPToolkit
  * @author Er Galvão Abbott <galvao@galvao.eti.br>
+ * @todo See if the problem of counting the rejected characters twice can be solved
+ * @todo See the possibility of improving the exclusion of rejected characters
  */
 
 class RandomString
@@ -17,9 +21,9 @@ class RandomString
     /**
      * Single method, constructor.
      *
-     * @param int $length Generated string's length
-     * @param array $allow Characters "classes" to be allowed on generated string
-     * @param array $rejected Characters to be rejected on generated string
+     * @param int $length Desired string's length
+     * @param array $allow Character "classes" to be allowed on the generated string
+     * @param array $rejected Characters "classes" to be rejected on generated string
      * @throws \Exception If $allow - $rejected produces a 0 length array
      */
 
@@ -48,20 +52,23 @@ class RandomString
                 $r = ord($r);
             }
 
-            if (count($this->characters) > count($rejected)) {
+            $characterCount = count($this->characters);
+            $rejectedCount  = count($rejected);
+
+            if ($characterCount > $rejectedCount) {
                 $this->characters = array_diff($this->characters, $rejected);
-            } elseif (count($rejected) > count($this->characters)) {
+            } elseif ($rejectedCount > $characterCount) {
                 $this->characters = array_diff($rejected, $this->characters);
             } else {
                 throw new \Exception('No characters left to use.');
             }
 
-            sort($this->characters);
+            $characterCount = count($this->characters);
         }
 
         while ($n < $this->length) {
             shuffle($this->characters);
-            $rand = mt_rand(0, (count($this->characters) - 1));
+            $rand = mt_rand(0, ($characterCount - 1));
 
             if ($rejected and in_array(chr($this->characters[$rand]), $rejected)) {
                 continue;
