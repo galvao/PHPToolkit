@@ -8,4 +8,4 @@ use PHPToolkit\RandomString;
  */
 
 $r = new RandomString(32, array('symbols'), array('"', "'", '\\'));
-echo '[' . $r->result . '] ' . strlen($r->result) .  "\n";
+echo $r->result . ' - ' .  strlen($r->result) .  ' <- characters long.' . PHP_EOL;
