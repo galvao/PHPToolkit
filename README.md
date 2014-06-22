@@ -11,4 +11,4 @@ You'll find one class per file in the "class" folder, and one example usage per 
 ToDo
 ----
 
-- Include an autoloader, and therefore check if the namespaces need to change (changing them is probably needed).
+- Include an autoloader, and therefore check if the namespaces need to change (changing them is probably needed). This will also result in justifying the "use" keyword =)
