@@ -8,7 +8,7 @@ namespace PHPToolkit;
  * @package PHPToolkit
  * @link https://github.com/galvao/PHPToolkit
  * @author Er Galvão Abbott <galvao@galvao.eti.br>
- * @todo See if the problem of counting the rejected characters twice can be solved
+ * @todo See if the problem of counting the characters twice can be solved
  * @todo See the possibility of improving the exclusion of rejected characters
  */
 
@@ -23,7 +23,7 @@ class RandomString
      *
      * @param int $length Desired string's length
      * @param array $allow Character "classes" to be allowed on the generated string
-     * @param array $rejected Characters "classes" to be rejected on generated string
+     * @param array $rejected Characters to be rejected on generated string
      * @throws \Exception If $allow - $rejected produces a 0 length array
      */
 
