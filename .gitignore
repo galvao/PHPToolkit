@@ -1,2 +1,4 @@
 nbproject/
 *.sublime-*
+*.*~
+*.swp
