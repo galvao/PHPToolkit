@@ -7,6 +7,9 @@ This is my personal take on some common tasks that are needed to projects, somet
 
 You'll find one class per file in the "class" folder, and one example usage per class in the root folder.
 
+## END OF LIFE
+This is one of my earlier exercises on Github. It has many wrongs in it (including the fact that it would be silly to make such an "Omnipackage"). This repo will remain as a monument to silly beginnings =)
+
 
 ToDo
 ----
